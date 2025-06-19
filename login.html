@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Apple Blossom</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-banner">
+      <h1>Apple Blossom</h1>
+      <p>Fashion wanita kekinian untukmu!</p>
+    </div>
+    <div class="auth-form">
+      <h2>Masuk</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <span class="icon">📧</span>
+          <input type="text" id="loginEmail" placeholder="Email atau No. HP" required>
+        </div>
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="loginPassword" placeholder="Password" required>
+          <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
+        </div>
+        <div id="loginMsg" class="message"></div>
+        <button type="submit">Login</button>
+        <p>Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+      </form>
+    </div>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Blossom - Cara Pesan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Container utama */
+    .order-guide-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    /* Judul utama */
+    .order-guide-container h2 {
+      color: #C08081;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 2.8rem;
+      letter-spacing: 1.2px;
+    }
+/* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .hamburger-menu .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #C08081;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Sidebar Styles */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #FFE4E1;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      z-index: 998;
+      transition: right 0.3s ease;
+      padding-top: 60px;
+    }
+
+    .mobile-sidebar.open {
+      right: 0;
+    }
+
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .sidebar-content a {
+      color: #6B4C4C;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid #FFB6C1;
+      transition: color 0.3s;
+    }
+
+    .sidebar-content a:hover,
+    .sidebar-content a.active {
+      color: #C08081;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 997;
+    }
+
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      
+      .hamburger-menu {
+        display: block;
+      }
+      
+      .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+
+    /* Box setiap langkah */
+    .order-step {
+      background: #FFE4E1; /* misty rose */
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(255,182,193,0.3);
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .order-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(255,182,193,0.5);
+    }
+    .order-step h3 {
+      color: #C08081;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #FFB6C1;
+      padding-bottom: 0.3rem;
+    }
+    .order-step p, .order-step ul {
+      color: #6B4C4C;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .order-step ul {
+      padding-left: 1.4rem;
+    }
+    .order-step ul li {
+      margin-bottom: 0.6rem;
+    }
+    /* Link dalam konten */
+    .order-step a {
+      color: #FF6F91;
+      font-weight: 600;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+    .order-step a:hover {
+      color: #C08081;
+    }
+    /* Ajakan akhir */
+    .order-cta {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 3rem;
+      font-weight: 600;
+    }
+    .order-cta a {
+      color: #FF6F91;
+      text-decoration: none;
+      border-bottom: 2px solid #FF6F91;
+      padding-bottom: 2px;
+      transition: all 0.3s;
+    }
+    .order-cta a:hover {
+      color: #C08081;
+      border-color: #C08081;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .order-step {
+        padding: 1.2rem 1.5rem;
+      }
+      .order-step h3 {
+        font-size: 1.5rem;
+      }
+      .order-guide-container h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="location.href='beranda.html'" role="button" tabindex="0">
+    <img src="logo apple blossom.jpg" alt="Logo Apple Blossom" />
+    <span>Apple Blossom</span>
+  </div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html" class="active">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="#" id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<main>
+  <section class="order-guide-container">
+
+    <h2>Panduan Pembelian di Apple Blossom</h2>
+
+    <div class="order-step">
+      <h3>1. Pilih Produk</h3>
+      <p>Pilih produk favorit Anda dari halaman <a href="produk.html">Produk</a>. Klik produk untuk melihat detail dan tambahkan ke keranjang belanja.</p>
+    </div>
+
+    <div class="order-step">
+      <h3>2. Keranjang Belanja</h3>
+      <p>Setelah memilih produk, buka <strong>Keranjang Belanja</strong> untuk memeriksa produk yang Anda pilih. Anda dapat mengubah jumlah atau menghapus produk sebelum melanjutkan ke pembayaran.</p>
+    </div>
+
+    <div class="order-step">
+      <h3>3. Metode Pembayaran</h3>
+      <p>Apple Blossom menyediakan beberapa opsi pembayaran yang mudah dan aman:</p>
+      <ul>
+        <li><strong>Transfer Bank:</strong> Transfer ke rekening bank kami. Detail rekening akan diberikan saat checkout.</li>
+        <li><strong>E-wallet:</strong> Pembayaran melalui aplikasi e-wallet populer seperti OVO, GoPay, Dana, dan lainnya.</li>
+        <li><strong>COD (Cash on Delivery):</strong> Bayar langsung saat barang diterima (khusus wilayah tertentu).</li>
+      </ul>
+    </div>
+
+    <div class="order-step">
+      <h3>4. Pengiriman</h3>
+      <p>Setelah pembayaran dikonfirmasi, pesanan Anda akan segera diproses dan dikirim menggunakan jasa pengiriman terpercaya.</p>
+      <ul>
+        <li>Estimasi waktu pengiriman: <strong>2-5 hari kerja</strong> tergantung lokasi pengiriman.</li>
+        <li>Biaya pengiriman akan dihitung otomatis saat checkout.</li>
+        <li>Anda akan menerima nomor resi pengiriman untuk melacak paket.</li>
+      </ul>
+    </div>
+
+    <div class="order-step">
+      <h3>5. Kebijakan Pengembalian</h3>
+      <p>Jika produk yang diterima tidak sesuai atau rusak, Anda dapat mengajukan pengembalian dalam waktu 7 hari setelah barang diterima. Hubungi kami melalui halaman <a href="kontak.html">Kontak</a> untuk proses lebih lanjut.</p>
+    </div>
+
+    <div class="order-cta">
+      <p>Siap untuk berbelanja? <a href="produk.html">Lihat Produk</a> dan temukan fashion estetik favoritmu sekarang juga!</p>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Tentang Apple Blossom</h3>
+      <p>Fashion wanita estetik & trendy di Purwokerto dengan desain kekinian, bahan berkualitas, dan harga terjangkau.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Link Cepat</h3>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Kontak Kami</h3>
+      <ul>
+        <li><i class="fas fa-phone"></i> 0822-4278-5295</li>
+        <li><i class="fab fa-whatsapp"></i> 0823-2836-5871</li>
+        <li><i class="fas fa-map-marker-alt"></i> Purwokerto, Jawa Tengah</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Sosial Media</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/appleblossom.id" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://shopee.co.id/appleblossom.id" target="_blank"><i class="fab fa-shopify"></i></a>
+        <a href="https://www.tiktok.com/@appleblossom.id" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 Apple Blossom. All Rights Reserved.</p>
+    <p>Programming by Zahratul Askia (H1D024016), Nadine Ariesta (H1D024028), Ian Jullian Sutrisno (H1D024039)</p>
+  </div>
+</footer>
+
+<!-- Hamburger Menu Button (Mobile) -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Mobile Menu Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="sidebar-content">
+    <a href="beranda.html" class="active">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+  </div>
+</div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (!isLoggedIn) {
+    window.location.href = 'login.html';
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  });
+});
+
+  // Hamburger Menu Functionality
+  function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.getElementById('mobileSidebar');
+    const overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    
+    hamburger.classList.toggle('active');
+    
+    if (sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      document.querySelector('.sidebar-overlay')?.remove();
+    } else {
+      sidebar.classList.add('open');
+      document.body.appendChild(overlay);
+      
+      // Close sidebar when overlay is clicked
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.remove();
+        hamburger.classList.remove('active');
+      });
+    }
+  }
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.sidebar-content a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.hamburger-menu').classList.remove('active');
+      document.getElementById('mobileSidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay')?.remove();
+    });
+  });
+</script>
+
+</body>
+</html>

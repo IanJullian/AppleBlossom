@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Akun - Apple Blossom</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-banner">
+      <h1>Apple Blossom</h1>
+      <p>Gabung sekarang dan temukan gaya terbaikmu!</p>
+    </div>
+    <div class="auth-form">
+      <h2>Daftar Akun</h2>
+      <form id="registerForm">
+        <div class="input-wrapper">
+        <div class="input-group">
+          <span class="icon">📧</span>
+          <input type="text" id="registerEmail" placeholder="Email aktif atau No. HP" required>
+        </div>
+          <small class="helper-text">Contoh: user@mail.com / 08xxxxxxxxxx</small>
+        </div>
+        <div class="input-wrapper">
+        <div class="input-wrapper">
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="registerPassword" placeholder="Password" required>
+          <span class="toggle-password" onclick="togglePassword('registerPassword', this)">👁</span>
+        </div>
+        <div id="passwordStrength" class="helper-text"></div> <!-- awalnya kosong -->
+        </div>
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="confirmPassword" placeholder="Ulangi Password" required>
+          <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">👁</span>
+        </div>
+        <div id="registerMsg" class="message"></div>
+        <button type="submit">Daftar</button>
+        <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+      </form>
+    </div>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

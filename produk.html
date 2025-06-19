@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Blossom - Produk</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style produk.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="location.href='beranda.html'" role="button" tabindex="0">
+    <img src="logo apple blossom.jpg" alt="Logo Apple Blossom" />
+    <span>Apple Blossom</span>
+  </div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html" class="active">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="#" id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<main>
+  <section class="product-grid">
+    <!-- Produk-produk -->
+    <div class="product" data-id="1" data-name="Bellea Cardigan" data-price="85000">
+      <img src="baju beranda 1.jpg" alt="Bellea Cardigan" />
+      <h3>Bellea Cardigan</h3>
+      <p>Rp85.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="2" data-name="Flower Pinky Dress" data-price="110000">
+      <img src="baju beranda 2.jpg" alt="Flower Pinky Dress" />
+      <h3>Flower Pinky Dress</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="3" data-name="Luna Cream Set" data-price="140000">
+      <img src="baju beranda 3.jpg" alt="Luna Cream Set" />
+      <h3>Luna Cream Set</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="4" data-name="Twilight Cream Set" data-price="130000">
+      <img src="baju beranda 4.jpg" alt="Twilight Cream Set" />
+      <h3>Twilight Cream Set</h3>
+      <p>Rp130.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="5" data-name="Grey Garden Cardi" data-price="80000">
+      <img src="Cardigan Elena.jpg" alt="Grey Garden Cardi" />
+      <h3>Grey Garden Cardi</h3>
+      <p>Rp80.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="6" data-name="Grey Grid Cardi" data-price="80000">
+      <img src="Cardigan Leora.jpg" alt="Grey Grid Cardi" />
+      <h3>Grey Grid Cardi</h3>
+      <p>Rp80.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="7" data-name="Hug Me Outer" data-price="80000">
+      <img src="Cardigan Nesha.jpg" alt="Hug Me Outer" />
+      <h3>Hug Me Outer</h3>
+      <p>Rp80.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="8" data-name="Linerush Cardigan" data-price="80000">
+      <img src="Cardigan Risha.jpg" alt="Linerush Cardigan" />
+      <h3>Linerush Cardigan</h3>
+      <p>Rp80.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="9" data-name="Cotton Sky Set" data-price="110000">
+      <img src="Dress Cardi Blue Kotak.jpg" alt="Cotton Sky Set" />
+      <h3>Cotton Sky Set</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="10" data-name="Lovelace Garden Set" data-price="110000">
+      <img src="Dress Cardi Blue Pita.jpg" alt="Lovelace Garden Set" />
+      <h3>Lovelace Garden Set</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="11" data-name="Olive Garden Look" data-price="140000">
+      <img src="Seetelan Creamy.jpg" alt="Olive Garden Look" />
+      <h3>Olive Garden Look</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="12" data-name="Rosé Bloom Set" data-price="140000">
+      <img src="Setelan Biana.jpg" alt="Rosé Bloom Set" />
+      <h3>Rosé Bloom Set</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="13" data-name="Cream Blossom Set" data-price="140000">
+      <img src="Setelan Grita.jpg" alt="Cream Blossom Set" />
+      <h3>Cream Blossom Set</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="14" data-name="Sunny Bow Set" data-price="110000">
+      <img src="Setelan Outfit Blue.jpg" alt="Sunny Bow Set" />
+      <h3>Sunny Bow Set</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="15" data-name="Cream Belle Set" data-price="110000">
+      <img src="Setelan Outfit Cream.jpg" alt="Cream Belle Set" />
+      <h3>Cream Belle Set</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="16" data-name="Buttercup Breeze Set" data-price="140000">
+      <img src="Setelan Pinky.jpg" alt="Buttercup Breeze Set" />
+      <h3>Buttercup Breeze Set</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="17" data-name="Ivory Bloom Set" data-price="140000">
+      <img src="Setelan Thea.jpg" alt="Ivory Bloom Set" />
+      <h3>Ivory Bloom Set</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="18" data-name="Mocha Petals Set" data-price="110000">
+      <img src="Mocha Petals Set.jpg" alt="Mocha Petals Set" />
+      <h3>Mocha Petals Set</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="19" data-name="Lavender Fluff Set" data-price="120000">
+      <img src="Lavender Fluff Set.jpg" alt="Lavender Fluff Set" />
+      <h3>Lavender Fluff Set</h3>
+      <p>Rp120.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="20" data-name="Blush Bow Shirt" data-price="90000">
+      <img src="Blush Bow Shirt.jpg" alt="Blush Bow Shirt" />
+      <h3>Blush Bow Shirt</h3>
+      <p>Rp90.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="21" data-name="Blush Butter Set" data-price="140000">
+      <img src="Blush Butter Set.jpg" alt="Blush Butter Set" />
+      <h3>Blush Butter Set</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="22" data-name="Vanilla Lace Knit" data-price="80000">
+      <img src="Vanilla Lace Knit.jpg" alt="Vanilla Lace Knit" />
+      <h3>Vanilla Lace Knit</h3>
+      <p>Rp80.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="23" data-name="Sunbloom Cardigan" data-price="80000">
+      <img src="Sunbloom Cardigan.jpg" alt="Sunbloom Cardigan" />
+      <h3>Sunbloom Cardigan</h3>
+      <p>Rp80.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="24" data-name="Creamy Sky Set" data-price="115000">
+      <img src="Creamy Sky Set.jpg" alt="Creamy Sky Set" />
+      <h3>Creamy Sky Set</h3>
+      <p>Rp115.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="25" data-name="Monochrome Muse" data-price="85000">
+      <img src="Monochrome Muse.jpg" alt="Monochrome Muse" />
+      <h3>Monochrome Muse</h3>
+      <p>Rp85.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="26" data-name="Whisper Garden" data-price="110000">
+      <img src="Whisper Garden.jpg" alt="Whisper Garden" />
+      <h3>Whisper Garden</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="27" data-name="Belle Amour Dress" data-price="100000">
+      <img src="Belle Amour Dress.jpg" alt="Belle Amour Dress" />
+      <h3>Belle Amour Dress</h3>
+      <p>Rp100.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="28" data-name="Bluebell Cream Dress" data-price="100000">
+      <img src="Bluebell Cream Dress.jpg" alt="Bluebell Cream Dress" />
+      <h3>Bluebell Cream Dress</h3>
+      <p>Rp100.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="29" data-name="Love Letter Layers" data-price="140000">
+      <img src="Love Letter Layers.jpg" alt="Love Letter Layers" />
+      <h3>Love Letter Layers</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="30" data-name="Honeywood Layers" data-price="140000">
+      <img src="Honeywood Layers.jpg" alt="Honeywood Layers" />
+      <h3>Honeywood Layers</h3>
+      <p>Rp140.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="31" data-name="Cherry Check Set" data-price="110000">
+      <img src="Cherry Check Set.jpg" alt="Cherry Check Set" />
+      <h3>Cherry Check Set</h3>
+      <p>Rp110.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+    <div class="product" data-id="32" data-name="Oasis Bloom" data-price="100000">
+      <img src="Oasis Bloom.jpg" alt="Oasis Bloom" />
+      <h3>Oasis Bloom</h3>
+      <p>Rp100.000</p>
+      <button class="btn-add-cart">Tambah ke Keranjang</button>
+    </div>
+  </section>
+</main>
+
+<!-- Floating Cart Icon -->
+<div id="cart-box" title="Lihat Keranjang">
+  <i class="fas fa-shopping-cart"></i>
+  <div id="cart-count" style="display:none;">0</div>
+</div>
+
+<!-- Cart Popup -->
+<div id="cart-popup">
+  <h3>Keranjang Belanja</h3>
+  <div id="cart-items"></div>
+  <div class="cart-total"></div>
+  <button class="checkout-btn">Checkout</button>
+  <button class="close-cart">Tutup</button>
+</div>
+
+<!-- Checkout Popup -->
+<!-- Bagian Checkout Popup yang sudah direvisi -->
+<div id="checkout-popup">
+  <div class="checkout-modal">
+    <button class="close-checkout" title="Tutup">&times;</button>
+    <h3>Checkout</h3>
+
+    <form id="checkout-form">
+      <h4>Informasi Pengiriman</h4>
+      
+      <div class="form-group">
+        <label for="nama">Nama Penerima</label>
+        <input type="text" id="nama" name="nama" required class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon" required class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="alamat">Alamat Lengkap</label>
+        <textarea id="alamat" name="alamat" required class="form-input"></textarea>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="provinsi">Provinsi</label>
+          <select id="provinsi" name="provinsi" required class="form-input">
+            <option value="">Pilih Provinsi</option>
+            <option value="jawa-tengah">Jawa Tengah</option>
+            <option value="jawa-barat">Jawa Barat</option>
+            <option value="jawa-timur">Jawa Timur</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="kota">Kota/Kabupaten</label>
+          <select id="kota" name="kota" required class="form-input">
+            <option value="">Pilih Kota/Kabupaten</option>
+            <option value="banyumas">Banyumas</option>
+            <option value="purwokerto">Purwokerto</option>
+            <option value="cilacap">Cilacap</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="kecamatan">Kecamatan</label>
+          <input type="text" id="kecamatan" name="kecamatan" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="kodepos">Kode Pos</label>
+          <input type="text" id="kodepos" name="kodepos" required class="form-input">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Pin Lokasi di Peta</label>
+        <div class="map-container">
+          <div id="map" style="height: 200px;"></div>
+          <input type="hidden" id="latitude" name="latitude">
+          <input type="hidden" id="longitude" name="longitude">
+        </div>
+        <p class="map-note">Klik pada peta untuk menentukan lokasi pengiriman</p>
+      </div>
+      
+      <div class="form-group">
+        <label for="catatan">Catatan untuk Kurir (Opsional)</label>
+        <textarea id="catatan" name="catatan" class="form-input" placeholder="Contoh: Rumah warna kuning, pagar besi merah"></textarea>
+      </div>
+
+      <h4>Metode Pembayaran</h4>
+      <div class="form-group">
+        <select id="payment-method" required class="form-input">
+          <option value="bank">Transfer Bank</option>
+          <option value="ewallet">E-wallet (OVO, GoPay, DANA)</option>
+          <option value="cod">COD (Cash on Delivery)</option>
+        </select>
+      </div>
+
+      <div class="payment-info" id="payment-info-bank">
+        <p>Transfer melalui ATM, Internet Banking, atau Mobile Banking ke rekening berikut:</p>
+        <ul>
+          <li><strong>Bank BCA</strong><br>123 456 7890 a.n. Apple Blossom</li>
+          <li><strong>Bank Mandiri</strong><br>006 123 4567890 a.n. Apple Blossom</li>
+          <li><strong>Bank BRI</strong><br>0029 01 123456 78 9 a.n. Apple Blossom</li>
+          <li><strong>Bank BNI</strong><br>0346789012 a.n. Apple Blossom</li>
+        </ul>
+      </div>
+      
+      <div class="payment-info" id="payment-info-ewallet" style="display:none;">
+        <p>Transfer melalui e-wallet berikut:</p>
+        <ul>
+          <li><strong>DANA</strong><br>0823-2836-5871 (Apple Blossom)</li>
+          <li><strong>Shopeepay</strong><br>0823-2836-5871 (Apple Blossom)</li>
+          <li><strong>OVO</strong><br>0823-2836-5871 (Apple Blossom)</li>
+          <li><strong>Gopay</strong><br>0823-2836-5871 (Apple Blossom)</li>
+        </ul>
+      </div>
+
+      <p class="payment-note">Harap transfer sesuai total pesanan agar pesanan bisa segera diproses!</p>
+
+      <div class="checkout-summary">
+        <table>
+          <tr>
+            <td>Subtotal Pesanan</td>
+            <td align="right" id="checkout-subtotal">Rp0</td>
+          </tr>
+          <tr>
+            <td>Biaya Layanan</td>
+            <td align="right" id="checkout-fee">Rp2.000</td>
+          </tr>
+          <tr class="total-row">
+            <td>Total Pembayaran</td>
+            <td align="right" id="checkout-total">Rp0</td>
+          </tr>
+        </table>
+      </div>
+
+      <button type="submit" class="checkout-btn-final">Proses Checkout</button>
+      <div class="checkout-success" style="display: none;">
+        Pesanan Anda sedang diproses!<br>Terima kasih telah berbelanja di Apple Blossom.
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Hamburger Menu Button (Mobile) -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Mobile Menu Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="sidebar-content">
+    <a href="index.html" class="active">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Tentang Apple Blossom</h3>
+      <p>Fashion wanita estetik & trendy di Purwokerto dengan desain kekinian, bahan berkualitas, dan harga terjangkau.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Link Cepat</h3>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Kontak Kami</h3>
+      <ul>
+        <li><i class="fas fa-phone"></i> 0822-4278-5295</li>
+        <li><i class="fab fa-whatsapp"></i> 0823-2836-5871</li>
+        <li><i class="fas fa-map-marker-alt"></i> Purwokerto, Jawa Tengah</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Sosial Media</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/appleblossom.id" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://shopee.co.id/appleblossom.id" target="_blank"><i class="fab fa-shopify"></i></a>
+        <a href="https://www.tiktok.com/@appleblossom.id" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Apple Blossom. All Rights Reserved.</p>
+    <p>Programming by Zahratul Askia (H1D024016), Nadine Ariesta (H1D024028), Ian Jullian Sutrisno (H1D024039)</p>
+  </div>
+</footer>
+
+<script src="js/produk.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Testimoni</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe4e1 0%, #fff0f3 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Container */
+    .testimoni-popup {
+      position: relative;
+      background: #fff;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 3rem 2.5rem 2.5rem;
+      box-shadow: 0 12px 30px rgba(192, 128, 129, 0.25);
+      animation: fadeInUp 0.5s ease forwards;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #f9d6d9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c08081;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+    .close-btn:hover {
+      background: #c08081;
+      color: #fff;
+    }
+
+    /* Heading */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #c08081;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1.2px;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: #a56b6d;
+      margin-bottom: 0.4rem;
+      display: block;
+      font-size: 1rem;
+    }
+
+    input[type='text'],
+    select,
+    textarea,
+    input[type='file'] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #ffb6c1;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fff0f3;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      outline-offset: 2px;
+      outline-color: transparent;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+    input[type='text']:focus,
+    select:focus,
+    textarea:focus,
+    input[type='file']:focus {
+      border-color: #c08081;
+      background: #fff;
+      outline-color: #c08081;
+      box-shadow: 0 0 8px rgba(192, 128, 129, 0.5);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Rating Stars */
+    .rating-stars {
+      display: flex;
+      gap: 12px;
+      font-size: 1.8rem;
+      user-select: none;
+    }
+    .rating-stars i {
+      color: #ffb6c1;
+      cursor: pointer;
+      transition: color 0.3s, transform 0.2s;
+      filter: drop-shadow(0 0 1px rgba(0,0,0,0.1));
+    }
+    .rating-stars i.active,
+    .rating-stars i:hover,
+    .rating-stars i:hover ~ i {
+      color: #ff6f91;
+      transform: scale(1.2);
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      background: linear-gradient(90deg, #c08081 60%, #ffb6c1 100%);
+      border: none;
+      padding: 1rem 0;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(90deg, #a56b6d 70%, #ff9fb1 100%);
+      box-shadow: 0 8px 22px rgba(255, 182, 193, 0.6);
+    }
+
+    /* Error message styling */
+    small {
+      font-size: 0.85rem;
+      color: #c08081;
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 450px) {
+      .testimoni-popup {
+        max-width: 100%;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .rating-stars {
+        font-size: 1.5rem;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="testimoni-popup" role="dialog" aria-labelledby="formTitle" aria-modal="true">
+    <button class="close-btn" aria-label="Tutup form" onclick="window.close()">
+      <i class="fas fa-times"></i>
+    </button>
+    <h2 id="formTitle">Upload Testimoni</h2>
+    <form id="testimoniForm" novalidate>
+      <div>
+        <label for="product">Produk yang Dikomentari</label>
+        <select id="product" required aria-required="true" aria-describedby="productError">
+          <option value="" disabled selected>Pilih Produk</option>
+          <option value="Dress Cardi Blue Kotak">Dress Cardi Blue Kotak</option>
+          <option value="Setelan Grita">Setelan Grita</option>
+          <option value="Cardigan Leora">Cardigan Leora</option>
+          <option value="Setelan Pinky">Setelan Pinky</option>
+          <option value="Dress Cardi Blue Pita">Dress Cardi Blue Pita</option>
+          <option value="Setelan Outfit Blue">Setelan Outfit Blue</option>
+          <option value="Setelan Biana">Setelan Biana</option>
+          <option value="Cardigan Risha">Cardigan Risha</option>
+          <option value="Seetelan Creamy">Seetelan Creamy</option>
+        </select>
+        <small id="productError">Pilih produk terlebih dahulu</small>
+      </div>
+
+      <div>
+        <label for="image">Upload Gambar Produk (opsional)</label>
+        <input type="file" id="image" accept="image/*" aria-describedby="imageHelp" />
+        <small id="imageHelp" style="color:#a56b6d; font-size:0.85rem;">Format gambar: JPG, PNG, max 5MB</small>
+      </div>
+
+      <div>
+        <label id="ratingLabel">Rating <span aria-hidden="true" style="color:#ff6f91;">*</span></label>
+        <div class="rating-stars" role="radiogroup" aria-labelledby="ratingLabel" tabindex="0">
+          <i class="fas fa-star" data-rating="1" role="radio" aria-checked="false" tabindex="-1" aria-label="1 bintang"></i>
+          <i class="fas fa-star" data-rating="2" role="radio" aria-checked="false" tabindex="-1" aria-label="2 bintang"></i>
+          <i class="fas fa-star" data-rating="3" role="radio" aria-checked="false" tabindex="-1" aria-label="3 bintang"></i>
+          <i class="fas fa-star" data-rating="4" role="radio" aria-checked="false" tabindex="-1" aria-label="4 bintang"></i>
+          <i class="fas fa-star" data-rating="5" role="radio" aria-checked="false" tabindex="-1" aria-label="5 bintang"></i>
+        </div>
+        <input type="hidden" id="rating" required aria-required="true" />
+      </div>
+
+      <div>
+        <label for="comment">Komentar</label>
+        <textarea
+          id="comment"
+          placeholder="Bagaimana pendapat Anda tentang produk ini?"
+          required
+          aria-required="true"
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="name">Nama Anda</label>
+        <input type="text" id="name" placeholder="Nama" required aria-required="true" />
+      </div>
+
+      <button type="submit" class="btn-submit" aria-label="Upload Testimoni">
+        Upload Testimoni
+      </button>
+    </form>
+  </div>
+
+  <script>
+    // Rating stars functionality with keyboard accessibility
+    const stars = document.querySelectorAll('.rating-stars i');
+    const ratingInput = document.getElementById('rating');
+    let currentRating = 0;
+
+    function setRating(rating) {
+      currentRating = rating;
+      ratingInput.value = rating;
+      stars.forEach((star, idx) => {
+        if (idx < rating) {
+          star.classList.add('active');
+          star.setAttribute('aria-checked', 'true');
+          star.tabIndex = 0;
+        } else {
+          star.classList.remove('active');
+          star.setAttribute('aria-checked', 'false');
+          star.tabIndex = -1;
+        }
+      });
+    }
+
+    stars.forEach((star) => {
+      star.addEventListener('click', () => {
+        setRating(parseInt(star.dataset.rating));
+      });
+      star.addEventListener('keydown', (e) => {
+        const rating = parseInt(star.dataset.rating);
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setRating(rating);
+        }
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          let next = rating < 5 ? rating + 1 : 1;
+          setRating(next);
+          stars[next - 1].focus();
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          let prev = rating > 1 ? rating - 1 : 5;
+          setRating(prev);
+          stars[prev - 1].focus();
+        }
+      });
+    });
+
+    // Form submission with validation and localStorage
+    const form = document.getElementById('testimoniForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Basic validation for product select
+      const productSelect = document.getElementById('product');
+      const productError = document.getElementById('productError');
+      if (!productSelect.value) {
+        productError.style.display = 'block';
+        productSelect.focus();
+        return;
+      } else {
+        productError.style.display = 'none';
+      }
+
+      // Rating required
+      if (!ratingInput.value) {
+        alert('Silakan pilih rating.');
+        stars[0].focus();
+        return;
+      }
+
+      const product = productSelect.value;
+      const rating = ratingInput.value;
+      const comment = document.getElementById('comment').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const imageFile = document.getElementById('image').files[0];
+
+      // Optional: Validate image size (max 5MB)
+      if (imageFile && imageFile.size > 5 * 1024 * 1024) {
+        alert('Ukuran gambar maksimal 5MB.');
+        return;
+      }
+
+      const testimoni = {
+        product,
+        rating,
+        comment,
+        name,
+        image: imageFile ? URL.createObjectURL(imageFile) : 'placeholder.jpg',
+        date: new Date().toISOString(),
+      };
+
+      // Ambil data testimoni yang sudah ada, atau buat array baru
+      let testimonials = JSON.parse(localStorage.getItem('tempTestimonials') || '[]');
+      testimonials.unshift(testimoni);
+      localStorage.setItem('tempTestimonials', JSON.stringify(testimonials));
+
+      alert('Testimoni berhasil diupload!');
+
+      // Tutup popup dan refresh halaman induk jika ada
+      window.close();
+      if (window.opener && !window.opener.closed) {
+        window.opener.location.reload();
+      }
+    });
+  </script>
+</body>
+</html>

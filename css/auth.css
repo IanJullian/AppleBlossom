@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf8f7;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  display: flex;
+  width: 90%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+}
+
+.auth-banner {
+  flex: 1;
+  background: #C08081;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.auth-banner p {
+  font-size: 1.1rem;
+}
+
+.auth-form {
+  flex: 1;
+  padding: 2rem;
+}
+
+.auth-form h2 {
+  color: #C08081;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 15px; /* Sedikit lebih ke kanan */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  height: 1em;
+  width: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 3.25rem; /* Padding kiri diperbesar */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5; /* Tambahkan line-height */
+  height: 3.25rem; /* Tinggi tetap untuk konsistensi */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+  width: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #C08081;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a96666;
+}
+
+.message {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.message.success {
+  color: green;
+}
+
+.message.error {
+  color: red;
+}
+
+p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+a {
+  color: #C08081;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tambahan di akhir file CSS sebelumnya */
+.helper-text {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 0.25rem;
+  text-align: left;
+  padding-left: 2.5rem;
+}
+
+#passwordStrength {
+  margin-top: 0.25rem;
+  text-align: left;
+  font-size: 0.75rem;
+  padding-left: 2.5rem;
+}
+
+#passwordStrength.weak { color: red; }
+#passwordStrength.medium { color: orange; }
+#passwordStrength.strong { color: green; }
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-banner, .auth-form {
+    flex: 1 1 100%;
+  }
+
+  .auth-banner {
+    padding: 1.5rem;
+  }
+
+  .auth-form {
+    padding: 1.5rem;
+  }
+}

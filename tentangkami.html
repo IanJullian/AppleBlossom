@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Blossom - Tentang Kami</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .hamburger-menu .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #C08081;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Sidebar Styles */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #FFE4E1;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      z-index: 998;
+      transition: right 0.3s ease;
+      padding-top: 60px;
+    }
+
+    .mobile-sidebar.open {
+      right: 0;
+    }
+
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .sidebar-content a {
+      color: #6B4C4C;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid #FFB6C1;
+      transition: color 0.3s;
+    }
+
+    .sidebar-content a:hover,
+    .sidebar-content a.active {
+      color: #C08081;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 997;
+    }
+
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      
+      .hamburger-menu {
+        display: block;
+      }
+      
+      .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="location.href='beranda.html'" role="button" tabindex="0">
+    <img src="logo apple blossom.jpg" alt="Logo Apple Blossom" />
+    <span>Apple Blossom</span>
+  </div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="tentangkami.html" class="active">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="#" id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<main>
+  <section class="about-container">
+    <h2>Tentang Apple Blossom</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="logo_apple_blossom-removebg-preview.png" alt="Tentang Apple Blossom" />
+      </div>
+      <div class="about-text">
+        <p>Apple Blossom didirikan pada tahun 2020 dengan visi untuk menyediakan fashion wanita yang estetik dan trendy dengan harga terjangkau di Purwokerto.</p>
+        <p>Kami percaya bahwa setiap wanita berhak tampil cantik dan percaya diri tanpa harus mengeluarkan biaya besar. Dengan desain yang selalu mengikuti tren terkini dan bahan berkualitas, kami berkomitmen untuk memberikan pengalaman berbelanja yang menyenangkan.</p>
+        <div class="about-details">
+          <div class="detail-item">
+            <span>🏢</span>
+            <p>Lokasi: Purwokerto, Jawa Tengah</p>
+          </div>
+          <div class="detail-item">
+            <span>📅</span>
+            <p>Berdiri sejak: 15 Januari 2020</p>
+          </div>
+          <div class="detail-item">
+            <span>👗</span>
+            <p>Jumlah koleksi: 30+ item</p>
+          </div>
+          <div class="detail-item">
+            <span>💖</span>
+            <p>Pelanggan setia: 15+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Programming by</h3>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://registrasi.unsoed.ac.id/infomhs/foto/H1D024016" alt="Zahratul Askia" />
+        </div>
+        <h4>Zahratul Askia</h4>
+        <p>H1D024016</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://registrasi.unsoed.ac.id/infomhs/foto/H1D024028" alt="Nadine Ariesta" />
+        </div>
+        <h4>Nadine Ariesta</h4>
+        <p>H1D024028</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://registrasi.unsoed.ac.id/infomhs/foto/H1D024039" alt="Ian Jullian Sutrisno" />
+        </div>
+        <h4>Ian Jullian Sutrisno</h4>
+        <p>H1D024039</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Tentang Apple Blossom</h3>
+      <p>Fashion wanita estetik & trendy di Purwokerto dengan desain kekinian, bahan berkualitas, dan harga terjangkau.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Link Cepat</h3>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Kontak Kami</h3>
+      <ul>
+        <li><i class="fas fa-phone"></i> 0822-4278-5295</li>
+        <li><i class="fab fa-whatsapp"></i> 0823-2836-5871</li>
+        <li><i class="fas fa-map-marker-alt"></i> Purwokerto, Jawa Tengah</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Sosial Media</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/appleblossom.id" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://shopee.co.id/appleblossom.id" target="_blank"><i class="fab fa-shopify"></i></a>
+        <a href="https://www.tiktok.com/@appleblossom.id" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 Apple Blossom. All Rights Reserved.</p>
+    <p>Programming by Zahratul Askia (H1D024016), Nadine Ariesta (H1D024028), Ian Jullian Sutrisno (H1D024039)</p>
+  </div>
+</footer>
+
+<!-- Hamburger Menu Button (Mobile) -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Mobile Menu Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="sidebar-content">
+    <a href="beranda.html" class="active">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (!isLoggedIn) {
+    window.location.href = 'login.html';
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  });
+});
+
+  // Hamburger Menu Functionality
+  function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.getElementById('mobileSidebar');
+    const overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    
+    hamburger.classList.toggle('active');
+    
+    if (sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      document.querySelector('.sidebar-overlay')?.remove();
+    } else {
+      sidebar.classList.add('open');
+      document.body.appendChild(overlay);
+      
+      // Close sidebar when overlay is clicked
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.remove();
+        hamburger.classList.remove('active');
+      });
+    }
+  }
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.sidebar-content a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.hamburger-menu').classList.remove('active');
+      document.getElementById('mobileSidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay')?.remove();
+    });
+  });
+</script>
+
+</body>
+</html>

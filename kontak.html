@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Blossom - Kontak</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .hamburger-menu .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #C08081;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Sidebar Styles */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #FFE4E1;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      z-index: 998;
+      transition: right 0.3s ease;
+      padding-top: 60px;
+    }
+
+    .mobile-sidebar.open {
+      right: 0;
+    }
+
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .sidebar-content a {
+      color: #6B4C4C;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid #FFB6C1;
+      transition: color 0.3s;
+    }
+
+    .sidebar-content a:hover,
+    .sidebar-content a.active {
+      color: #C08081;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 997;
+    }
+
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      
+      .hamburger-menu {
+        display: block;
+      }
+      
+      .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="location.href='beranda.html'" role="button" tabindex="0">
+    <img src="logo apple blossom.jpg" alt="Logo Apple Blossom" />
+    <span>Apple Blossom</span>
+  </div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html" class="active">Kontak</a>
+    <a href="#" id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<main>
+  <section class="contact-container">
+    <h2>Hubungi Kami</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Informasi Kontak</h3>
+        <div class="info-item">
+          <span>📱</span>
+          <p>WhatsApp: <a href="https://wa.me/6282242785295">0822-4278-5295</a></p>
+          <p>WhatsApp: <a href="https://wa.me/6282328365871">0823-2836-5871</a></p>
+        </div>
+        <div class="info-item">
+          <span>📍</span>
+          <p>Alamat: H6RW+V4Q, Pakembaran, Bancarkembar, Kec. Purwokerto Utara, Kabupaten Banyumas, Jawa Tengah 53121</p>
+        </div>
+        <div class="info-item">
+          <span>🕒</span>
+          <p>Jam Operasional: Senin-Minggu, 10:00-21:00 WIB</p>
+        </div>
+
+        <h3>Sosial Media</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/appleblossom.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" target="_blank">📷 Instagram</a>
+          <a href="https://shopee.co.id/appleblossom.id?uls_trackid=52qn253p01bq&utm_content=3uJyVHJ7LersWaiQAmZzPRUCDpXh" class="social-icon" target="_blank">🛍️ Shopee</a>
+          <a href="https://www.tiktok.com/@appleblossom.id?_t=8grvpz35fue&_r=1" class="social-icon" target="_blank">📱 TikTok</a>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Kirim Pesan</h3>
+        <form id="messageForm">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Nomor WhatsApp</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan Anda</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="contact-map">
+      <h3>Lokasi Kami</h3>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.715807979971!2d109.2427774!3d-7.4077889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655ef0428e0a67%3A0x3841bf0464e1ad50!2sApple%20Blossom%20Purwokerto!5e0!3m2!1sid!2sid!4v1716800000000!5m2!1sid!2sid" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="map-link">
+        <a href="https://www.google.com/maps/place/Apple+Blossom+Purwokerto/@-7.4074038,109.2472917,16.98z/data=!4m6!3m5!1s0x2e655ef0428e0a67:0x3841bf0464e1ad50!8m2!3d-7.4077889!4d109.2453524!16s%2Fg%2F11h3njg45c?hl=id-ID&entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-button">
+          Buka di Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Tentang Apple Blossom</h3>
+      <p>Fashion wanita estetik & trendy di Purwokerto dengan desain kekinian, bahan berkualitas, dan harga terjangkau.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Link Cepat</h3>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Kontak Kami</h3>
+      <ul>
+        <li><i class="fas fa-phone"></i> 0822-4278-5295</li>
+        <li><i class="fab fa-whatsapp"></i> 0823-2836-5871</li>
+        <li><i class="fas fa-map-marker-alt"></i> Purwokerto, Jawa Tengah</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Sosial Media</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/appleblossom.id" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://shopee.co.id/appleblossom.id" target="_blank"><i class="fab fa-shopify"></i></a>
+        <a href="https://www.tiktok.com/@appleblossom.id" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 Apple Blossom. All Rights Reserved.</p>
+    <p>Programming by Zahratul Askia (H1D024016), Nadine Ariesta (H1D024028), Ian Jullian Sutrisno (H1D024039)</p>
+  </div>
+</footer>
+
+<!-- Hamburger Menu Button (Mobile) -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Mobile Menu Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="sidebar-content">
+    <a href="beranda.html" class="active">Beranda</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+    <a href="produk.html">Produk</a>
+    <a href="carapesan.html">Cara Pesan</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="kontak.html">Kontak</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (!isLoggedIn) {
+    window.location.href = 'login.html';
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  });
+});
+
+  // Hamburger Menu Functionality
+  function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.getElementById('mobileSidebar');
+    const overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    
+    hamburger.classList.toggle('active');
+    
+    if (sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      document.querySelector('.sidebar-overlay')?.remove();
+    } else {
+      sidebar.classList.add('open');
+      document.body.appendChild(overlay);
+      
+      // Close sidebar when overlay is clicked
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.remove();
+        hamburger.classList.remove('active');
+      });
+    }
+  }
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.sidebar-content a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.hamburger-menu').classList.remove('active');
+      document.getElementById('mobileSidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay')?.remove();
+    });
+  });
+
+  // Close menu when clicking outside
+   document.addEventListener('DOMContentLoaded', function () {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (!isLoggedIn) {
+    window.location.href = 'login.html';
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  });
+});
+
+  document.addEventListener('click', function(event) {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('nav');
+    
+    if (!event.target.closest('nav') && 
+        !event.target.closest('.hamburger-menu') &&
+        nav.classList.contains('active')) {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+    }
+  });
+
+  // Form submit handler
+  document.getElementById('messageForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (!name || !email || !message) {
+      alert('Harap isi semua field yang wajib diisi!');
+      return;
+    }
+    
+    console.log('Pesan dikirim:', { name, email, phone, message });
+    alert(`Terima kasih ${name}, pesan Anda telah terkirim! Kami akan segera menghubungi Anda melalui email atau WhatsApp.`);
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
